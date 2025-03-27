@@ -30,7 +30,7 @@
             );
 
             //push to data
-            array_push($post_arr['data'], $post_item);
+            array_push($post_arr, $post_item);
 
         }
         echo json_encode($post_arr);
