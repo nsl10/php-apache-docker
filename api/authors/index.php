@@ -8,3 +8,23 @@
         header('Access-Control-Allow-Headers: Origin, Accept, Content-Type, X-Requested-With');
         exit();
     }
+    
+    if ($method === 'GET') {
+        require_once 'read.php';
+        exit();
+    }
+    
+    if ($method === 'POST') {
+        header('Access-Control-Allow-Methods: POST');
+        exit();
+    }
+    
+    if ($method === 'PUT') {
+        header('Access-Control-Allow-Methods: PUT');
+        exit();
+    }
+    
+    if ($method === 'DELETE') {
+        header('Access-Control-Allow-Methods: DELETE');
+        exit();
+    }
