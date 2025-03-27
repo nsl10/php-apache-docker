@@ -10,21 +10,21 @@
     }
     
     if ($method === 'GET') {
-        require_once 'read.php';
+        isset($_GET['id']) ? require_once 'read_single.php'; : require 'read.php';
         exit();
     }
     
     if ($method === 'POST') {
-        header('Access-Control-Allow-Methods: POST');
+        require_once 'create.php';
         exit();
     }
     
     if ($method === 'PUT') {
-        header('Access-Control-Allow-Methods: PUT');
+        require_once 'update.php';
         exit();
     }
     
     if ($method === 'DELETE') {
-        header('Access-Control-Allow-Methods: DELETE');
+        require_once 'delete.php';
         exit();
     }
