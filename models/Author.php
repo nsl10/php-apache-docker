@@ -19,7 +19,7 @@
         //get post
         public function read() {
             //create query
-            $query = 'use nathan_lynott_test_postgesql SELECT id, author FROM authors';
+            $query = 'SELECT id, author FROM authors';
 
             //statement
             $stmt = $this->conn->prepare($query);
@@ -30,7 +30,7 @@
 
         //get single post
         public function read_single() {
-            $query = 'use nathan_lynott_test_postgesql SELECT id, author FROM authors where id = ?';
+            $query = 'SELECT id, author FROM authors where id = ?';
             
             // prepare statement
             $stmt = $this->conn->prepare($query);
@@ -48,7 +48,7 @@
         //create post
 
         public function create() {
-            $query = 'use nathan_lynott_test_postgesql INSERT INTO authors (id, author) values((select (max(id)+1) from authors), :author)';
+            $query = 'INSERT INTO authors (id, author) values((select (max(id)+1) from authors), :author)';
 
             // prepare statement
             $stmt = $this->conn->prepare($query);
@@ -74,7 +74,7 @@
         //Update post
 
         public function update() {
-            $query = 'use nathan_lynott_test_postgesql update authors set author = :author where id = :id';
+            $query = 'update authors set author = :author where id = :id';
 
             // prepare statement
             $stmt = $this->conn->prepare($query);
@@ -101,7 +101,7 @@
 
         public function delete() {
             // create query
-            $query = 'use nathan_lynott_test_postgesql DELETE FROM AUTHORS WHERE id = :id';
+            $query = 'DELETE FROM AUTHORS WHERE id = :id';
             
             // prepare statement
             $stmt = $this->conn->prepare($query);
