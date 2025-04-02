@@ -10,7 +10,7 @@
     }
     
     if ($method === 'GET') {
-        isset($_GET['id']) ? require_once 'read_single.php'; : require 'read.php';
+        isset($_GET['id']) ? require_once 'read_single.php' : require 'read.php';
         exit();
     }
     
