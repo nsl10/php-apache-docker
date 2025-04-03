@@ -35,7 +35,7 @@
             array_push($post_item);
 
         }
-        echo json_encode($post_arr);
+        echo json_encode($post_item);
     } else {
         echo json_encode(array('message'=> 'No Post Found'));
     }
