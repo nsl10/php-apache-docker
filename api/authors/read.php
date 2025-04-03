@@ -19,7 +19,7 @@
 
     if($num >0) {
         $post_arr = array();
-        $post_arr['data'] = array();
+        //$post_arr['data'] = array();
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
