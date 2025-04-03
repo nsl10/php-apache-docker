@@ -19,7 +19,7 @@
 
     if($num >0) {
         $post_arr = array();
-        $post_arr['data'] = array();
+        //$post_arr['data'] = array();
 
         while ($row = $result->fetch(PDO::FETCH_ASSOC)){
             extract($row);
@@ -32,10 +32,10 @@
             );
 
             //push to data
-            array_push($post_item);
+            array_push($post_arr, $post_item);
 
         }
-        echo json_encode($post_item);
+        echo json_encode($post_arr);
     } else {
         echo json_encode(array('message'=> 'No Post Found'));
     }
